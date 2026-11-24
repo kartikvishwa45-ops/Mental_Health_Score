@@ -102,7 +102,7 @@ function resetForm() {
   document.querySelectorAll('.bad').forEach((el) => el.classList.remove('bad'));
   errBox.hidden = true;
 }
-$('#reset').addEventListener('click', resetForm);
+$('#resetBtn').addEventListener('click', resetForm);
 $('#again').addEventListener('click', () => {
   resetForm(); result.hidden = true; form.hidden = false;
   form.scrollIntoView({ behavior: 'smooth' });
