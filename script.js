@@ -1,5 +1,5 @@
 // ===== Configuration =====
-const API_URL = 'http://127.0.0.1:8000'; // your FastAPI base URL
+const API_URL = 'https://mental-health-score-1-8omt.onrender.com'; // your FastAPI base URL
 const SCORE_MAX = 10;                    // upper bound of your score scale; only used to draw the ring/bar
 
 const $ = (s) => document.querySelector(s);
