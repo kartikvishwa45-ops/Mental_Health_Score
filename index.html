@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>MindPulse – Digital Wellness Score</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<header class="nav"><div class="wrap nav-in">
+  <a href="#home" class="logo"><span class="logo-ic">&#10022;</span>MindPulse</a>
+  <a href="#predict" class="btn-ghost small">Start</a>
+</div></header>
+
+<main>
+<section id="home" class="wrap hero">
+  <div>
+    <span class="badge">&#10024; AI-Powered Mental Wellness Prediction</span>
+    <h1>Understand Your <span class="grad">Digital Wellness</span></h1>
+    <p class="sub">Discover how your digital habits, lifestyle and daily routine relate to your mental wellness score.</p>
+    <a href="#predict" class="btn">Check My Wellness Score &darr;</a>
+  </div>
+  <svg viewBox="0 0 400 400" class="art float" aria-hidden="true">
+    <defs>
+      <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A78BFA"/><stop offset="1" stop-color="#7655E8"/></linearGradient>
+      <linearGradient id="g2" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#BFDBFE"/><stop offset="1" stop-color="#DDD6FE"/></linearGradient>
+    </defs>
+    <circle class="breathe" cx="200" cy="200" r="175" fill="url(#g2)" opacity=".55"/>
+    <circle cx="200" cy="200" r="130" fill="#fff" opacity=".7"/>
+    <circle cx="200" cy="200" r="90" fill="url(#g1)"/>
+    <path d="M150 205c14 22 36 32 50 32s36-10 50-32" stroke="#fff" stroke-width="9" stroke-linecap="round" fill="none"/>
+    <circle cx="170" cy="170" r="8" fill="#fff"/><circle cx="230" cy="170" r="8" fill="#fff"/>
+    <g fill="#A78BFA"><circle cx="72" cy="120" r="10"/><circle cx="335" cy="95" r="7"/><circle cx="345" cy="290" r="12" opacity=".6"/><circle cx="60" cy="300" r="6"/></g>
+    <path d="M320 150l8 18 18 8-18 8-8 18-8-18-18-8 18-8z" fill="#7655E8" opacity=".8"/>
+  </svg>
+</section>
+
+<form id="predict" class="wrap form" novalidate>
+  <div class="center"><h2>Tell us about your routine</h2><p class="muted">Four short sections. Nothing is stored by this page.</p></div>
+
+  <fieldset class="card">
+    <legend><span class="ic">&#128100;</span><b>About you</b><small>Basic details</small></legend>
+    <div class="grid">
+      <label class="f">Age <small>10 to 100</small>
+        <input type="number" id="age" min="10" max="100" placeholder="e.g. 21"/><em class="err" data-for="age"></em></label>
+      <div class="f">Gender
+        <div class="seg"><label><input type="radio" name="gender" value="Male" checked/><span>Male</span></label><label><input type="radio" name="gender" value="Female"/><span>Female</span></label></div></div>
+      <label class="f full">Country <small>Type the country name, e.g. India, USA</small>
+        <input type="text" id="country" list="countries" placeholder="India"/>
+        <datalist id="countries"><option>India</option><option>USA</option><option>Canada</option><option>Australia</option><option>UK</option><option>Germany</option><option>Mexico</option><option>Turkey</option><option>France</option></datalist>
+        <em class="err" data-for="country"></em></label>
+    </div>
+  </fieldset>
+
+  <fieldset class="card">
+    <legend><span class="ic">&#127891;</span><b>Education</b><small>Your current academic level</small></legend>
+    <div class="grid"><div class="f full">Academic level
+      <div class="seg">
+        <label><input type="radio" name="academic_level" value="High School"/><span>High School</span></label>
+        <label><input type="radio" name="academic_level" value="Undergraduate" checked/><span>Undergraduate</span></label>
+        <label><input type="radio" name="academic_level" value="Graduate"/><span>Graduate</span></label>
+      </div></div></div>
+  </fieldset>
+
+  <fieldset class="card">
+    <legend><span class="ic">&#128241;</span><b>Digital habits</b><small>How you use your phone and social apps</small></legend>
+    <div class="grid">
+      <label class="f">Most used platform
+        <select id="most_used_platform">
+          <option>Facebook</option><option>LinkedIn</option><option selected>Instagram</option><option>Snapchat</option><option>Twitter</option><option>YouTube</option><option>TikTok</option><option>LINE</option><option>KakaoTalk</option><option>VKontakte</option><option>WhatsApp</option><option>WeChat</option>
+        </select></label>
+      <label class="f">Main purpose of use
+        <select id="purpose_of_use"><option>Networking</option><option>Education</option><option selected>Entertainment</option><option>News</option></select></label>
+      <label class="f">Average daily usage <small>Hours per day on social media</small>
+        <div class="sl"><input type="range" id="avg_daily_usage_hours" min="0" max="24" step="0.5" value="4"/><output>4h</output></div></label>
+      <label class="f">Daily phone unlocks <small>Times you unlock your phone per day</small>
+        <input type="number" id="daily_unlocks" min="0" placeholder="e.g. 80"/><em class="err" data-for="daily_unlocks"></em></label>
+    </div>
+  </fieldset>
+
+  <fieldset class="card">
+    <legend><span class="ic">&#128154;</span><b>Lifestyle</b><small>Study, movement, sleep and stress</small></legend>
+    <div class="grid">
+      <label class="f">Study hours <small>Per day</small><div class="sl"><input type="range" id="study_hours" min="0" max="24" step="0.5" value="4"/><output>4h</output></div></label>
+      <label class="f">Physical activity <small>Per day</small><div class="sl"><input type="range" id="physical_activity_hours" min="0" max="24" step="0.5" value="1"/><output>1h</output></div></label>
+      <label class="f">Sleep <small>Per night</small><div class="sl"><input type="range" id="sleep_hours_per_night" min="0" max="24" step="0.5" value="7"/><output>7h</output></div></label>
+      <div class="f">Stress level
+        <div class="seg">
+          <label><input type="radio" name="stress_level" value="Low"/><span>Low</span></label>
+          <label><input type="radio" name="stress_level" value="Medium" checked/><span>Medium</span></label>
+          <label><input type="radio" name="stress_level" value="High"/><span>High</span></label>
+          <label><input type="radio" name="stress_level" value="Very High"/><span>Very High</span></label>
+        </div></div>
+    </div>
+  </fieldset>
+
+  <div id="error" class="alert" role="alert" hidden></div>
+  <div class="actions">
+    <button type="submit" class="btn">&#10024; Predict my score</button>
+    <button type="button" id="reset" class="btn-ghost">&#8634; Reset form</button>
+  </div>
+</form>
+
+<section id="result" class="wrap result" hidden>
+  <div class="score-card">
+    <h2>Your predicted mental health score</h2>
+    <div class="ring" role="img" aria-label="Predicted score">
+      <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="88" class="track"/><circle id="arc" cx="100" cy="100" r="88" class="arc"/></svg>
+      <span id="score">0.00</span>
+    </div>
+    <div class="bar"><i id="bar"></i></div>
+    <p class="scale">Ring and bar are drawn on a 0–<span id="max"></span> scale</p>
+  </div>
+  <div class="card note"><span>&#9432;</span><p>This number is a prediction from a machine learning model trained on survey data. It is not a clinical diagnosis. For concerns about your wellbeing, talk to a qualified professional.</p></div>
+  <div class="center"><button id="again" class="btn-ghost big">&#8634; Check again</button></div>
+</section>
+</main>
+
+<div id="loader" class="loader" role="status" aria-live="polite" hidden>
+  <div><div class="pulse"><i></i><b></b></div><p>Running the model…</p></div>
+</div>
+<footer>MindPulse is a portfolio project. Predictions are not medical advice.</footer>
+<script src="script.js"></script>
+</body>
+</html>
